@@ -8,7 +8,7 @@ import "../../style/signin.css";
 function SignUp() {
   return (
     <div className="main bg-dark">
-   
+   <div className="sign-in-wrapper">
       <section className="sign-in-content">
       <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
         <h1>Sign In</h1>
@@ -27,10 +27,11 @@ function SignUp() {
               >Remember me</label
             >
           </div>
+          <button type="button" className="sign-in-button" >Sign In</button>
         
         </form>
       </section>
-    
+      </div>
     </div>
   );
 }
