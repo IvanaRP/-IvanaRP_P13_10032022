@@ -1,8 +1,7 @@
 import React from "react";
+import FeaturesHome from '../../components/FeaturesHome'
+import { featuresHome } from '../../data/featuresHome'
 
-import ChatIconIllustration from '../../assets/icon-chat.png'
-import MoneyIconIllustration from '../../assets/icon-money.png'
-import SecurityIconIllustration from '../../assets/icon-security.png'
 
 import "../../style/home.css";
 
@@ -18,7 +17,20 @@ function Home() {
           <p className="text">Open a savings account with Argent Bank today!</p>
         </section>
       </div>
-      <section className="features">
+      <div className="features">
+                <h2 className="sr-only">Features</h2>
+                {
+                    featuresHome && featuresHome.map((card) => (
+                        <FeaturesHome 
+                            key = {card.id}
+                            feature = {card.name}
+                            title = {card.title}
+                            text = {card.text}
+                        />
+                    ))
+                }
+            </div>
+      {/* <section className="features">
         <h2 className="sr-only">Features</h2>
         <div className="feature-item">
           <img src={ChatIconIllustration} alt="Chat Icon" className="feature-icon" />
@@ -51,7 +63,7 @@ function Home() {
             is always safe.
           </p>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

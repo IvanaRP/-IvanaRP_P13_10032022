@@ -23,7 +23,7 @@ function Header() {
         />
         </Link>
       <div>
-        <Link className="main-nav-item" to="/sign-in">
+        <Link className="main-nav-item" to="/login">
          <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
           Sign In
         </Link>

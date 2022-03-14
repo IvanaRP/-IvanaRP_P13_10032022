@@ -5,7 +5,7 @@ import { faUserCircle} from "@fortawesome/free-solid-svg-icons";
 import "../../style/signin.css";
 
 
-function SignUp() {
+function Login() {
   return (
     <div className="main bg-dark">
    <div className="sign-in-wrapper">
@@ -36,4 +36,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default Login;
