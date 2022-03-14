@@ -1,26 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import { Provider } from 'react-redux'
+import { store } from './utils/store'
 
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Error from "./components/Error";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 
 ReactDOM.render(
   <React.StrictMode>
-   <Router>
-      <Header />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-      <Footer/>
-    </Router>
+    <Provider store = {store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
-);
-
+)
