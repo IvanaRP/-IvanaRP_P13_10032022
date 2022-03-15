@@ -9,6 +9,8 @@ import Error from "./components/Error";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+import Profile from "./pages/Profile";
+
 
 function App() {  
 
@@ -18,6 +20,7 @@ function App() {
        <Routes>
          <Route exact path="/" element={<Home />} />
          <Route exact path="/login" element={<Login />} />
+         <Route exact path="/profile" element={<Profile />} />
          <Route path="*" element={<Error />} />
        </Routes>
        <Footer/>
