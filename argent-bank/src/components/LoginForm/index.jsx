@@ -1,3 +1,5 @@
+
+import React from "react";
 import "../../style/signin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle} from "@fortawesome/free-solid-svg-icons";
@@ -12,7 +14,7 @@ function LoginForm() {
         <form>
           <div className="input-wrapper">
             <label htmlFor="username">Username</label>
-            <input type="text" id="username" />
+            <input type="text" id="username"  />
           </div>
           <div className="input-wrapper">
             <label htmlFor="password">Password</label
