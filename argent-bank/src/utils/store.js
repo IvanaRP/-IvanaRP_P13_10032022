@@ -1,10 +1,19 @@
 import { createStore } from "redux";
 
 
-const reducerFn = (state,action) => {
+const reducer = (state,action) => {
 
 
 }
 
-// on crée le store avec le state et le reducer
-export const store = createStore(reducerFn);
+
+
+// Pour connecter les Redux Devtools on utilise
+// un fonction disponible sur l'objet window
+// Si cette fonction existe on l'exécute.
+const reduxDevtools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+
+// on utilise le résultat de cette fonction en parametre de createStore
+const store = createStore(reducer, reduxDevtools);
+
+export default store
