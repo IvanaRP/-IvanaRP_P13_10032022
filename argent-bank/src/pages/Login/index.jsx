@@ -3,8 +3,6 @@ import { useSelector } from "react-redux";
 
 import LoginForm from "../../components/LoginForm";
 
-import Logout from "../../components/Logout";
-import { selectUser } from "../../features/login";
 import "../../style/signin.css";
 
 function Login() {

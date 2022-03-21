@@ -6,11 +6,10 @@ import "./style/index.css";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Profile from "./pages/Profile";
 import Error from "./components/Error";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
-import Profile from "./pages/Profile";
 
 function App() {
   return (
