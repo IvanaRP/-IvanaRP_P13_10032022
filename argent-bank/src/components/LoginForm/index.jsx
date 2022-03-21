@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
+import { userLogin } from "../../features/loginSlice";
 
 function LoginForm() {
   const [userName, setUserName] = useState("");
@@ -11,7 +12,7 @@ function LoginForm() {
 
   const handleSubmit = (e) => {
     alert("FORM SUBMITED");
-    e.preventDefault();
+    // e.preventDefault();
   };
 
   return (
@@ -26,6 +27,7 @@ function LoginForm() {
               <input
                 type="text"
                 id="username"
+                placeholder="username"
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
               />
@@ -35,6 +37,7 @@ function LoginForm() {
               <input
                 type="password"
                 id="password"
+                placeholder="password"
                 value={userPassword}
                 onChange={(e) => setUserPassword(e.target.value)}
               />
