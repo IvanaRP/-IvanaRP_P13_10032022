@@ -1,18 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from "react-router";
+
+// API calls
+import { editUser } from "../../getApi/getApi";
 import "../../style/profil.css";
 
 function Profile() {
+  const [editName, setEditName] = useState(false);
+  const [newFirstName, setNewFirstName] = useState("");
+  const [newLastName, setNewLastName] = useState("");
+  const selectUser = (state) => state.getUser.user.body;
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  if (user === undefined) {
+    return <Navigate to="/" />;
+  }
+  const firstName = user.firstName;
+  const lastName = user.lastName;
+
+  const edit = () => {
+    dispatch(editUser(newFirstName, newLastName));
+    setEditName(false);
+  };
   return (
     <div>
       <main className="main bg-dark">
-        <div className="header">
-          <h1>
-            Welcome back
-            <br />
-            Tony Jarvis!
-          </h1>
-          <button className="edit-button">Edit Name</button>
-        </div>
+        <h1>
+          Welcome back
+          <br />
+          {firstName} {lastName}
+        </h1>
+        {editName ? (
+          <div>
+            <input
+              className="edit-button"
+              type="button"
+              onClick={() => {
+                setEditName(true);
+              }}
+              value="Edit Name"
+            />
+            <input
+              className="edit-input"
+              value={newFirstName}
+              placeholder={firstName}
+              type="text"
+              onChange={(e) => {
+                setNewFirstName(e.target.value);
+              }}
+            />
+            <input
+              className="edit-input"
+              value={newLastName}
+              placeholder={lastName}
+              type="text"
+              onChange={(e) => {
+                setNewLastName(e.target.value);
+              }}
+            />
+            <button
+              className="edit-button"
+              type="submit"
+              value="Save"
+              onClick={edit}
+            >
+              Save
+            </button>
+
+            <button
+              className="edit-button"
+              type="button"
+              value="Cancel"
+              onClick={() => {
+                setEditName(false);
+              }}
+            >
+              Cancel
+            </button>
+          </div>
+        ) : (
+          <input
+            className="edit-button"
+            type="button"
+            onClick={() => {
+              setEditName(true);
+            }}
+            value="Edit Name"
+          />
+        )}
         <h2 className="sr-only">Accounts</h2>
         <section className="account">
           <div className="account-content-wrapper">

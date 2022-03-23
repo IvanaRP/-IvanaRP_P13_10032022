@@ -12,6 +12,11 @@ import {
   loadApiUserError,
   loadApiUserSuccess,
 } from "../actions/actionGetUser";
+import {
+  loadApiEditUser,
+  loadApiEditUserError,
+  loadApiEditUserSuccess,
+} from "../actions/actionEditUser";
 
 // CONSTANTS // __________________________________________________________________
 
@@ -48,19 +53,45 @@ export const getToken = (email, password) => {
   };
 };
 // user
-export const getUser = (token) => {
+export const getUser = (token, firstName, lastName) => {
   return (dispatch) => {
     dispatch(loadApiUser());
     axios({
       method: "POST",
       url: baseURL + "profile",
       headers: { Authorization: `Bearer ${token}` },
+      data: {
+        firstName,
+        lastName,
+      },
     })
       .then((response) => {
         dispatch(loadApiUserSuccess(response.data));
       })
       .catch((error) => {
         dispatch(loadApiUserError(error.message));
+      });
+  };
+};
+
+export const editUser = (firstName, lastName) => {
+  const token = localStorage.getItem("token");
+  return (dispatch) => {
+    dispatch(loadApiEditUser());
+    axios({
+      method: "PUT",
+      url: baseURL + "profile",
+      headers: { Authorization: `Bearer ${token}` },
+      data: {
+        firstName,
+        lastName,
+      },
+    })
+      .then((response) => {
+        dispatch(loadApiEditUserSuccess(response.data));
+      })
+      .catch((error) => {
+        dispatch(loadApiEditUserError(error.message));
       });
   };
 };
