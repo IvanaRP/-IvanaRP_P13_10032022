@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+
+// API calls
+import { getToken } from "../../getApi/getApi";
 
 import "../../style/signin.css";
 
 function LoginForm() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [invalidFields, setInvalidFields] = useState("");
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setInvalidFields("");
+    if (email === "" || password === "") {
+      return setInvalidFields("Please fill fields correctly");
+    } else {
+      dispatch(getToken(email, password));
+      console.log("loged");
+    }
+  };
+
   return (
     <div className="main bg-dark">
       <div className="sign-in-wrapper">
@@ -20,8 +41,8 @@ function LoginForm() {
                 id="username"
                 name="email"
                 placeholder="username"
-                value={userEmail}
-                onChange={(e) => setUserEmail(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="input-wrapper">
@@ -31,8 +52,8 @@ function LoginForm() {
                 id="password"
                 name="password"
                 placeholder="password"
-                value={userPassword}
-                onChange={(e) => setUserPassword(e.target.value)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="input-remember">
