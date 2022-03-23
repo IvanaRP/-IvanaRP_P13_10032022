@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+import { Navigate } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 
@@ -15,6 +17,8 @@ function LoginForm() {
 
   const dispatch = useDispatch();
 
+  const message = useSelector((state) => state.getUser.user.status);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setInvalidFields("");
@@ -25,7 +29,9 @@ function LoginForm() {
       console.log("loged");
     }
   };
-
+  if (message === 200) {
+    return <Navigate to="/profile" />;
+  }
   return (
     <div className="main bg-dark">
       <div className="sign-in-wrapper">

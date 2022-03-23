@@ -6,6 +6,13 @@ import {
   loadApiTokenSuccess,
 } from "../actions/actionGetToken";
 
+// user
+import {
+  loadApiUser,
+  loadApiUserError,
+  loadApiUserSuccess,
+} from "../actions/actionGetUser";
+
 // CONSTANTS // __________________________________________________________________
 
 const baseURL = "http://localhost:3001/api/v1/user/";
@@ -33,9 +40,27 @@ export const getToken = (email, password) => {
         localStorage.setItem("token", response.data.body.token);
         const token = localStorage.getItem("token");
         console.log(token);
+        dispatch(getUser(token));
       })
       .catch((error) => {
         dispatch(loadApiTokenError(error.message));
+      });
+  };
+};
+// user
+export const getUser = (token) => {
+  return (dispatch) => {
+    dispatch(loadApiUser());
+    axios({
+      method: "POST",
+      url: baseURL + "profile",
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((response) => {
+        dispatch(loadApiUserSuccess(response.data));
+      })
+      .catch((error) => {
+        dispatch(loadApiUserError(error.message));
       });
   };
 };
