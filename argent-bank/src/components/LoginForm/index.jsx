@@ -1,35 +1,27 @@
 import React from "react";
-import "../../style/signin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 
-import { useState } from "react";
-import { userLogin } from "../../features/loginSlice";
+import "../../style/signin.css";
 
 function LoginForm() {
-  const [userName, setUserName] = useState("");
-  const [userPassword, setUserPassword] = useState("");
-
-  const handleSubmit = (e) => {
-    alert("FORM SUBMITED");
-    // e.preventDefault();
-  };
-
   return (
     <div className="main bg-dark">
       <div className="sign-in-wrapper">
         <section className="sign-in-content">
           <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
           <h1>Sign In</h1>
+
           <form onSubmit={handleSubmit}>
             <div className="input-wrapper">
               <label htmlFor="username">Username</label>
               <input
                 type="text"
                 id="username"
+                name="email"
                 placeholder="username"
-                value={userName}
-                onChange={(e) => setUserName(e.target.value)}
+                value={userEmail}
+                onChange={(e) => setUserEmail(e.target.value)}
               />
             </div>
             <div className="input-wrapper">
@@ -37,6 +29,7 @@ function LoginForm() {
               <input
                 type="password"
                 id="password"
+                name="password"
                 placeholder="password"
                 value={userPassword}
                 onChange={(e) => setUserPassword(e.target.value)}
@@ -46,7 +39,9 @@ function LoginForm() {
               <input type="checkbox" id="remember-me" />
               <label htmlFor="remember-me">Remember me</label>
             </div>
-            <button type="subit" className="sign-in-button">
+            <div>{invalidFields}</div>
+
+            <button type="submit" className="sign-in-button">
               Sign In
             </button>
           </form>
