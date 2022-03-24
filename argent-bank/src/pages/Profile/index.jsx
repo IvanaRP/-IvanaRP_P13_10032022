@@ -10,10 +10,11 @@ function Profile() {
   const [editName, setEditName] = useState(false);
   const [newFirstName, setNewFirstName] = useState("");
   const [newLastName, setNewLastName] = useState("");
+
   const selectUser = (state) => state.getUser.user.body;
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-
+  console.log(user);
   if (user === undefined) {
     return <Navigate to="/" />;
   }
@@ -45,7 +46,7 @@ function Profile() {
             <input
               className="edit-input"
               value={newFirstName}
-              placeholder={firstName}
+              // placeholder={firstName}
               type="text"
               onChange={(e) => {
                 setNewFirstName(e.target.value);
@@ -54,7 +55,7 @@ function Profile() {
             <input
               className="edit-input"
               value={newLastName}
-              placeholder={lastName}
+              // placeholder={lastName}
               type="text"
               onChange={(e) => {
                 setNewLastName(e.target.value);

@@ -21,45 +21,45 @@ const initialStateUser = {
 // reducer
 export const userReducer = createReducer(initialStateUser, (builder) => {
   return builder
-    .addCase(loadApiUser, (draft) => {
-      draft.isLoading = true;
+    .addCase(loadApiUser, (state) => {
+      state.isLoading = true;
       return;
     })
-    .addCase(loadApiUserSuccess, (draft, action) => {
-      draft.isLoading = false;
-      draft.isLogged = true;
-      draft.user = action.payload;
-      draft.error = "";
+    .addCase(loadApiUserSuccess, (state, action) => {
+      state.isLoading = false;
+      state.isLogged = true;
+      state.user = action.payload;
+      state.error = "";
       return;
     })
-    .addCase(loadApiUserError, (draft, action) => {
-      draft.isLoading = false;
-      draft.isLogged = false;
-      draft.user = {};
-      draft.error = action.payload;
+    .addCase(loadApiUserError, (state, action) => {
+      state.isLoading = false;
+      state.isLogged = false;
+      state.user = {};
+      state.error = action.payload;
       return;
     })
-    .addCase(logOut, (draft, action) => {
-      draft.isLoading = false;
-      draft.isLogged = false;
-      draft.user = {};
-      draft.error = action.payload;
+    .addCase(logOut, (state, action) => {
+      state.isLoading = false;
+      state.isLogged = false;
+      state.user = {};
+      state.error = action.payload;
       return;
     })
-    .addCase(loadApiEditUser, (draft) => {
-      draft.isLoading = true;
+    .addCase(loadApiEditUser, (state) => {
+      state.isLoading = true;
       return;
     })
-    .addCase(loadApiEditUserSuccess, (draft, action) => {
-      draft.isLoading = false;
-      draft.user = action.payload;
-      draft.error = "";
+    .addCase(loadApiEditUserSuccess, (state, action) => {
+      state.isLoading = false;
+      state.user = action.payload;
+      state.error = "";
       return;
     })
-    .addCase(loadApiEditUserError, (draft, action) => {
-      draft.isLoading = false;
-      draft.user = {};
-      draft.error = action.payload;
+    .addCase(loadApiEditUserError, (state, action) => {
+      state.isLoading = false;
+      state.user = {};
+      state.error = action.payload;
       return;
     });
 });

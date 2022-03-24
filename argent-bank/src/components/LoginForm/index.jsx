@@ -41,12 +41,12 @@ function LoginForm() {
 
           <form onSubmit={handleSubmit}>
             <div className="input-wrapper">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="email">Email</label>
               <input
                 type="text"
-                id="username"
+                id="email"
                 name="email"
-                placeholder="username"
+                placeholder="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />

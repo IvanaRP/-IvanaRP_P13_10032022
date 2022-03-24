@@ -20,25 +20,25 @@ const initialStateToken = {
 // reducer
 export const tokenReducer = createReducer(initialStateToken, (builder) => {
   return builder
-    .addCase(loadApiToken, (draft) => {
-      draft.isLoading = true;
-      draft.token = "";
-      draft.tokenExist = "";
-      draft.error = "";
+    .addCase(loadApiToken, (state) => {
+      state.isLoading = true;
+      state.token = "";
+      state.tokenExist = "";
+      state.error = "";
       return;
     })
-    .addCase(loadApiTokenSuccess, (draft, action) => {
-      draft.isLoading = false;
-      draft.token = action.payload;
-      draft.tokenExist = true;
-      draft.error = "";
+    .addCase(loadApiTokenSuccess, (state, action) => {
+      state.isLoading = false;
+      state.token = action.payload;
+      state.tokenExist = true;
+      state.error = "";
       return;
     })
-    .addCase(loadApiTokenError, (draft, action) => {
-      draft.isLoading = false;
-      draft.token = "";
-      draft.tokenExist = false;
-      draft.error = action.payload;
+    .addCase(loadApiTokenError, (state, action) => {
+      state.isLoading = false;
+      state.token = "";
+      state.tokenExist = false;
+      state.error = action.payload;
       return;
     });
 });
