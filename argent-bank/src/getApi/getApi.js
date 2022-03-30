@@ -18,11 +18,9 @@ import {
   loadApiEditUserSuccess,
 } from "../actions/actionEditUser";
 
-// CONSTANTS // __________________________________________________________________
-
 const baseURL = "http://localhost:3001/api/v1/user/";
 
-// API CALLS // __________________________________________________________________
+// API CALLS
 
 /**
  * to get user token with POST method in API Call

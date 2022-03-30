@@ -1,5 +1,3 @@
-// IMPORTS // ______________________________________________________________
-
 import { createReducer } from "@reduxjs/toolkit";
 // actions imports
 import {
@@ -8,8 +6,7 @@ import {
   loadApiTokenSuccess,
 } from "../actions/actionGetToken";
 
-// REDUCER // ______________________________________________________________
-
+// REDUCER
 // initial state
 const initialStateToken = {
   isLoading: false,

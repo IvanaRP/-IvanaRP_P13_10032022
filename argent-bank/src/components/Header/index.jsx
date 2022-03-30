@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import HeaderLogo from "../../assets/argentBankLogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+
+import { faSignOut } from "@fortawesome/free-solid-svg-icons";
 import "../../style/header.css";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../actions/actionLogout";
@@ -30,24 +32,32 @@ function Header() {
           />
         </Link>
         {login ? (
-          <div>
+          <div className="main-nav-user-logout">
+            <div className="main-nav-user">
+              <FontAwesomeIcon
+                icon={faUserCircle}
+                className="sign-in-icon-nav"
+              ></FontAwesomeIcon>
+              <div className="main-nav-user-name">{user.body.firstName}</div>
+            </div>
             <Link to="./profile" className="main-nav-item">
-              <i className="fa fa-user-circle"></i>
-              {user.body.firstName}
+              <FontAwesomeIcon icon={faSignOut}></FontAwesomeIcon>
+              <button
+                className="main-nav-item"
+                onClick={() => dispatch(logout())}
+              >
+                Sign out
+              </button>
             </Link>
-            <button
-              className="main-nav-item"
-              onClick={() => dispatch(logout())}
-            >
-              <i className="fas fa-sign-out-alt"></i>
-              Log out
-            </button>
           </div>
         ) : (
           <div>
-            <Link className="main-nav-item" to="/login">
-              <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
-              Sign In
+            <Link className="main-nav-item-login" to="/login">
+              <FontAwesomeIcon
+                icon={faUserCircle}
+                className="sign-in-icon-nav"
+              ></FontAwesomeIcon>
+              <div className="sign-in-text">Sign In</div>
             </Link>
           </div>
         )}

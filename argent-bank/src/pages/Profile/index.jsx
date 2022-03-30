@@ -28,58 +28,53 @@ function Profile() {
   return (
     <div>
       <main className="main bg-dark">
-        <h1>
+        <h1 className="profile-welcome">
           Welcome back
           <br />
-          {firstName} {lastName}
+          <div className="profile-welcome-name">
+            {firstName} {lastName}
+          </div>
         </h1>
         {editName ? (
-          <div>
-            <input
-              className="edit-button"
-              type="button"
-              onClick={() => {
-                setEditName(true);
-              }}
-              value="Edit Name"
-            />
-            <input
-              className="edit-input"
-              value={newFirstName}
-              // placeholder={firstName}
-              type="text"
-              onChange={(e) => {
-                setNewFirstName(e.target.value);
-              }}
-            />
-            <input
-              className="edit-input"
-              value={newLastName}
-              // placeholder={lastName}
-              type="text"
-              onChange={(e) => {
-                setNewLastName(e.target.value);
-              }}
-            />
-            <button
-              className="edit-button"
-              type="submit"
-              value="Save"
-              onClick={edit}
-            >
-              Save
-            </button>
-
-            <button
-              className="edit-button"
-              type="button"
-              value="Cancel"
-              onClick={() => {
-                setEditName(false);
-              }}
-            >
-              Cancel
-            </button>
+          <div className="edit-input-box">
+            <div className="edit-input-wrapper">
+              <input
+                className="edit-input"
+                value={newFirstName}
+                type="text"
+                onChange={(e) => {
+                  setNewFirstName(e.target.value);
+                }}
+              />
+              <input
+                className="edit-input"
+                value={newLastName}
+                type="text"
+                onChange={(e) => {
+                  setNewLastName(e.target.value);
+                }}
+              />
+            </div>
+            <div className="edit-button-wrapper">
+              <button
+                className="edit-button"
+                type="submit"
+                value="Save"
+                onClick={edit}
+              >
+                Save
+              </button>
+              <button
+                className="edit-button"
+                type="button"
+                value="Cancel"
+                onClick={() => {
+                  setEditName(false);
+                }}
+              >
+                Cancel
+              </button>
+            </div>
           </div>
         ) : (
           <input

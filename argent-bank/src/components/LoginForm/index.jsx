@@ -36,8 +36,11 @@ function LoginForm() {
     <div className="main bg-dark">
       <div className="sign-in-wrapper">
         <section className="sign-in-content">
-          <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
-          <h1>Sign In</h1>
+          <FontAwesomeIcon
+            icon={faUserCircle}
+            className="sign-in-icon"
+          ></FontAwesomeIcon>
+          <div className="sign-in-text">Sign In</div>
 
           <form onSubmit={handleSubmit}>
             <div className="input-wrapper">

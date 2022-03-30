@@ -1,8 +1,7 @@
-// IMPORTS // ______________________________________________________________
-
+// IMPORTS
 import { createAction } from "@reduxjs/toolkit";
 
-// ACTIONS // ______________________________________________________________
+// ACTIONS
 
 /**
  * Redux actions get token
