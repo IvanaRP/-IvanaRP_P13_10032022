@@ -24,7 +24,7 @@ function Profile() {
   const selectUser = (state) => state.getUser.user.body;
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-  console.log(user);
+  // console.log(user);
   if (user === undefined) {
     return <Navigate to="/" />;
   }
