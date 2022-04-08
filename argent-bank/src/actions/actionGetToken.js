@@ -4,8 +4,8 @@ import { createAction } from "@reduxjs/toolkit";
 // ACTIONS
 
 /**
- * Redux actions get token
- * @reduxAction
+ * Redux actions to get Token
+ *
  */
 
 export const loadApiToken = createAction("load-token");

@@ -12,6 +12,7 @@ import {
   loadApiUserError,
   loadApiUserSuccess,
 } from "../actions/actionGetUser";
+
 import {
   loadApiEditUser,
   loadApiEditUserError,
@@ -23,12 +24,8 @@ const baseURL = "http://localhost:3001/api/v1/user/";
 // API CALLS
 
 /**
- * to get user token with POST method in API Call
- * @function
- * @name getToken
- * @param {string} email
- * @param {string} password
- * @returns {object}
+ * Function to get user token
+ *
  */
 export const getToken = (email, password) => {
   return (dispatch) => {
@@ -50,6 +47,11 @@ export const getToken = (email, password) => {
       });
   };
 };
+
+/**
+ * Function to get user info
+ */
+
 // user
 export const getUser = (token, firstName, lastName) => {
   return (dispatch) => {
@@ -72,6 +74,11 @@ export const getUser = (token, firstName, lastName) => {
   };
 };
 
+/**
+ * Function to edit user info
+ */
+
+// edit user
 export const editUser = (firstName, lastName) => {
   const token = localStorage.getItem("token");
   return (dispatch) => {

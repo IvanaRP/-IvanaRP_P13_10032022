@@ -1,5 +1,10 @@
 import { createAction } from "@reduxjs/toolkit";
 
+/**
+ * Redux actions to edit user's name
+ *
+ */
+
 export const loadApiEditUser = createAction("load-edit-user");
 
 export const loadApiEditUserSuccess = createAction(

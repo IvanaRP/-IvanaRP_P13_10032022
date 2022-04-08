@@ -4,6 +4,12 @@ import { featuresHome } from "../../data/featuresHome";
 
 import "../../style/home.css";
 
+/**
+ * This Function display a Home page
+ * A selection with hero content
+ * Features at Home page
+ */
+
 function Home() {
   return (
     <div>

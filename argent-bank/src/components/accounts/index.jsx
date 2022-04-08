@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * Account component
+ * Display the account title , amount , description
+ * Preview of a button to view transactions
+ */
+
 const Account = (props) => {
   return (
     <div className="account">

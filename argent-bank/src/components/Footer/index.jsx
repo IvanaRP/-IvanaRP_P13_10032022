@@ -2,6 +2,11 @@ import React from "react";
 
 import "../../style/footer.css";
 
+/**
+ * This component function FOOTER section
+ *
+ */
+
 function Footer() {
   return (
     <div className="footer">
@@ -10,4 +15,4 @@ function Footer() {
   );
 }
 
-export default  Footer;
+export default Footer;

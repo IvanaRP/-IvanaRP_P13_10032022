@@ -3,11 +3,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router";
 
 import { accounts } from "../../data/accounts";
-import Account from "../../accounts";
+import Account from "../../components/accounts";
 
 // API calls
 import { editUser } from "../../getApi/getApi";
 import "../../style/profil.css";
+
+/**
+ * This Function display a Profile page
+ * Display of user first name and last name
+ * Edit function to modify user's name
+ * Accounts component
+ */
 
 function Profile() {
   const [editName, setEditName] = useState(false);

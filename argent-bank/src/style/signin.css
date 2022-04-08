@@ -66,3 +66,8 @@
   width: 50px;
   color: #00bc77;
 }
+
+.input-invalid {
+  display: flex;
+  color: #00bc77;
+}

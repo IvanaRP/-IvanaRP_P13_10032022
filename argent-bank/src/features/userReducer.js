@@ -18,6 +18,11 @@ const initialStateUser = {
   error: "",
 };
 
+/**
+ * Reducer for User
+ *
+ */
+
 // reducer
 export const userReducer = createReducer(initialStateUser, (builder) => {
   return builder

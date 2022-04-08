@@ -2,6 +2,13 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, selectUser } from "../../features/login";
 
+/**
+ * Logout component to display user's profile page
+ * User name
+ * Button for logout
+ *
+ */
+
 function Logout() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();

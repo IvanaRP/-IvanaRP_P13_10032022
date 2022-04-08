@@ -10,6 +10,13 @@ import { getToken } from "../../getApi/getApi";
 
 import "../../style/signin.css";
 
+/**
+ * Login Form component to Login user to user's profile page
+ * Input email
+ * Input password
+ * Sign in button
+ */
+
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,6 +26,8 @@ function LoginForm() {
 
   const message = useSelector((state) => state.getUser.user.status);
 
+  const tokenOk = useSelector((state) => state.token.tokenOk);
+  // console.log(tokenOk);
   const handleSubmit = (e) => {
     e.preventDefault();
     setInvalidFields("");
@@ -26,12 +35,13 @@ function LoginForm() {
       return setInvalidFields("Please fill fields correctly");
     } else {
       dispatch(getToken(email, password));
-      console.log("loged");
+      // console.log("loged");
     }
   };
   if (message === 200) {
     return <Navigate to="/profile" />;
   }
+
   return (
     <div className="main bg-dark">
       <div className="sign-in-wrapper">
@@ -69,8 +79,10 @@ function LoginForm() {
               <input type="checkbox" id="remember-me" />
               <label htmlFor="remember-me">Remember me</label>
             </div>
-            <div>{invalidFields}</div>
-
+            <div className="input-invalid">{invalidFields}</div>
+            {tokenOk === false && (
+              <div className="input-invalid">Email or password invalid</div>
+            )}
             <button type="submit" className="sign-in-button">
               Sign In
             </button>

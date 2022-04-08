@@ -7,6 +7,14 @@ import { faSignOut } from "@fortawesome/free-solid-svg-icons";
 import "../../style/header.css";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../actions/actionLogout";
+
+/**
+ * This function display the header of the website
+ *  The different part of the header :
+ * - the Argent bank logo
+ * - the component to Logout or Login user
+ */
+
 export const logout = () => {
   localStorage.removeItem("token");
   return (dispatch) => {

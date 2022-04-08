@@ -7,11 +7,17 @@ import {
 } from "../actions/actionGetToken";
 
 // REDUCER
+
+/**
+ * Reducer for  Token
+ *
+ */
+
 // initial state
 const initialStateToken = {
   isLoading: false,
   token: "",
-  tokenExist: "",
+  tokenOk: "",
   error: "",
 };
 // reducer
@@ -20,21 +26,21 @@ export const tokenReducer = createReducer(initialStateToken, (builder) => {
     .addCase(loadApiToken, (state) => {
       state.isLoading = true;
       state.token = "";
-      state.tokenExist = "";
+      state.tokenOk = "";
       state.error = "";
       return;
     })
     .addCase(loadApiTokenSuccess, (state, action) => {
       state.isLoading = false;
       state.token = action.payload;
-      state.tokenExist = true;
+      state.tokenOk = true;
       state.error = "";
       return;
     })
     .addCase(loadApiTokenError, (state, action) => {
       state.isLoading = false;
       state.token = "";
-      state.tokenExist = false;
+      state.tokenOk = false;
       state.error = action.payload;
       return;
     });
