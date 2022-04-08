@@ -30,12 +30,7 @@ mongo --version
 
 # 2.Installation
 
-##  1. Open the project on your IDE (here we use VSCode)
-* Fork the repository
-* Clone it on your computer
-* Install dependencies if necessary
-
-## 2. Run API Server
+## 1. Run API Server
 * Fork the repository GitHub on your computer : https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API
 * Clone the repo onto your computer
 * Open a terminal window in the cloned project
@@ -59,9 +54,8 @@ npm run populate-db
 
 Your server should now be running at http://locahost:3001 and you will now have two users in your MongoDB database!
 
-## 3. Run the React project
+## 2. Run the React project
 
-port http://localhost:3000/
 * Fork this repository https://github.com/IvanaRP/IvanaRP_P13_10032022
 * Clone it on your computer.
 * Open the folder in VsCode
