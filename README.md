@@ -13,7 +13,7 @@ This repo contains all the source code for Argent - Bank
 # 1.Prerequisites
 * [NodeJS (version 12.18)](https://nodejs.org/en/)
 * [Yarn](https://yarnpkg.com/)
-* [MongoDB Community Server] (https://www.mongodb.com/try/download/community)
+* [MongoDB Community Server] (https://www.mongodb.com/try/download/community/)
 
 Argent Bank uses the following tech stack:
 
