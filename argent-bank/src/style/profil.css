@@ -80,7 +80,9 @@
 }
 
 .transaction-button {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   width: 100%;
   padding: 8px;
   font-size: 1.1rem;
