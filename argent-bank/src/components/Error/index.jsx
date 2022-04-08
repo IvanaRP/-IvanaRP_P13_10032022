@@ -1,14 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import "../../styles/error.css";
-
-
+import "../../style/error.css";
 
 /**
  * PAGE COMPONENT : This component function display a 404 error message
  * An 404 error, with a text error and a go back link
  */
-
 
 function Error() {
   return (
