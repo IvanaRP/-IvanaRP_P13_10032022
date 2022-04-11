@@ -69,7 +69,7 @@
   font-weight: bold;
   padding: 10px;
   margin: 10px;
-  width: 30%;
+  width: fit-content;
 }
 .edit-button-editName {
   width: 100%;
@@ -120,6 +120,12 @@ select:focus {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.accounts {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 /* profile name */
 
