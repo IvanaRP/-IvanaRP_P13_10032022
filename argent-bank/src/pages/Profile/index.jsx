@@ -26,7 +26,7 @@ function Profile() {
   const dispatch = useDispatch();
   // console.log(user);
   if (user === undefined) {
-    return <Navigate to="/" />;
+    return <Navigate to="/IvanaRP_P13_10032022" />;
   }
   const firstName = user.firstName;
   const lastName = user.lastName;

@@ -32,7 +32,7 @@ function Header() {
   return (
     <div className="headContainer">
       <nav className="main-nav">
-        <Link className="main-nav-logo" to="/">
+        <Link className="main-nav-logo" to="/IvanaRP_P13_10032022">
           <img
             className="main-nav-logo-image"
             src={HeaderLogo}
